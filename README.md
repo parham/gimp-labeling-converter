@@ -106,6 +106,43 @@ Assuming the config file named as "./coco.json",
 gimp_labeling_converter --config "./coco.json"
 ```
 
+##### JSON Configuration file samples
+
+For mask handler:
+```
+{
+    "dir_in" : "/home/phm/datasets/Pipe_Inspection/pipe_inspection_group01_20201117/label_orig",
+    "file_out" : "/home/phm/Documents/temp", 
+    "handler" : "mask",
+    "category" : {
+        "defect" : 1, 
+        "surface_defect" : 2
+    },
+    "num_workers" : 10
+}
+```
+
+For coco handler:
+```
+{
+    "dir_in" : "/home/phm/GoogleDrive/Personal/Datasets/my-dataset/thermal-segmentor/Pipe_Inspection/pipe_inspection_group01_20201117/label_orig",
+    "file_out" : "/home/phm/Documents/temp/phm.coco", 
+    "handler" : "coco",
+    "num_workers" : 10,
+    "category" : {
+        "defect" : 1, 
+        "surface_defect" : 2
+    },
+    "dataset_name" : "Pipe_Inspection",
+    "description" : "Test COCO",
+    "url" : "phm.com",
+    "version" : "1.0.0",
+    "year" : 2022,
+    "contributor" : "Parham Nooralishahi"
+}
+```
+
+
 ## XCF Dataset
 
 Another feature provided in this repository is the customized dataset for Pytorch designed to handle XCF dataset.
